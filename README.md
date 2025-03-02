@@ -2,6 +2,6 @@
 an webside tool coded by myself 
 
 
-#Quickstart
-(1)\tDownload to file.
-(2)\tOpen the file in your webbrowser.
+# Quickstart
+(1)  Download to file.
+(2)  Open the file in your webbrowser.
