@@ -1,219 +1,359 @@
+<!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School-Scrum-Tool</title>
+
+    <!-- Inter wie auf der Startseite -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <style>
+         :root {
+            --bg: #0b0f17;
+            --card: #0f1624;
+            --text: #d4d9e3;
+            --muted: #93a0b4;
+            --accent1: #7aa8ff;
+            --accent2: #a78bfa;
+            --radius: 18px;
+            --shadow: 0 6px 30px rgba(0, 0, 0, .32), inset 0 1px 0 rgba(255, 255, 255, .03);
+            --ok: #38d39f;
+            --warn: #ffd166;
+            --danger: #ff7a7a;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html,
         body {
-            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        
+        body {
             margin: 0;
-            padding: 0;
-            line-height: 1.5;
-            background-color: #f9f9f9;
+            font-family: 'Inter', system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: radial-gradient(80% 120% at 10% 0%, #111b2d 0%, var(--bg) 40%) no-repeat fixed;
+            line-height: 1.55;
         }
-
-        header, footer {
-            padding: 10px 20px;
-            background: #6200ea;
-            color: #fff;
+        
+        header {
+            width: 100%;
+            padding: 24px 20px;
             text-align: center;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #1a1d23 0%, #111318 100%);
+            color: #e4e7ed;
+            border-bottom: 2px solid rgba(255, 255, 255, .08);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, .6);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
         }
-
+        
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+        }
+        
         .section {
-            margin: 20px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            min-width: 500px;
+            margin: 20px 0;
+            padding: 18px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
         }
-
-        .button {
-            background: #6200ea;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
+        /* details/summary */
+        
+        details {
+            border-radius: 14px;
+        }
+        
+        summary {
+            list-style: none;
             cursor: pointer;
+            padding: 8px 0 14px;
+            color: #e7ebf4;
+            border-bottom: 1px dashed rgba(255, 255, 255, .12);
+            user-select: none;
         }
-
-            .button:hover {
-                background: #3700b3;
-            }
-
-        .todo-item, .sprint {
+        
+        details[open]>summary {
+            border-bottom-style: solid;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        /* Form + Tabellenbereich */
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 12px 12px;
+        }
+        
+        label {
+            font-size: 13px;
+            color: #a6b1c2;
+            font-weight: 600;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            appearance: none;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: var(--text);
+            padding: 10px 12px;
+            border-radius: 12px;
+            outline: none;
+            transition: border-color .15s ease, box-shadow .15s ease;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: rgba(122, 168, 255, .6);
+            box-shadow: 0 0 0 3px rgba(122, 168, 255, .15);
+        }
+        /* Buttons */
+        
+        .button,
+        button {
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            color: #0b0f17;
+            font-weight: 800;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform .06s ease, filter .2s ease;
+        }
+        
+        .button:hover,
+        button:hover {
+            filter: brightness(1.06);
+        }
+        
+        .button:active,
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        .button.outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, .16);
+        }
+        /* Listen / Cards */
+        
+        .todo-list,
+        .sprint-list {
+            padding: 0;
+            list-style: none;
+        }
+        
+        .todo-item,
+        .sprint {
             margin: 10px 0;
-            padding: 10px;
-            background: #f1f1f1;
-            border-radius: 5px;
+            padding: 12px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 12px;
         }
-
-        .todo-list, .sprint-list {
-            padding: 10px;
-            list-style-type: none;
-        }
-
-        #daysLeft {
+        
+        .comment-section {
             margin-top: 10px;
-            font-size: 0.9em;
-            color: #333;
         }
-
-        .team-member {
-            margin: 5px 0;
+        
+        .comment {
+            margin: 6px 0;
+            padding: 8px 10px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 10px;
+            color: #dfe4ee;
         }
-
+        /* Status */
+        
         .status-circle {
             display: inline-block;
             width: 10px;
             height: 10px;
             border-radius: 50%;
             margin-left: 10px;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, .25), 0 0 10px rgba(0, 0, 0, .15) inset;
         }
-
+        
         .status-red {
-            background-color: red;
+            background-color: var(--danger);
         }
-
+        
         .status-yellow {
-            background-color: yellow;
+            background-color: var(--warn);
         }
-
+        
         .status-green {
-            background-color: green;
+            background-color: var(--ok);
         }
-
+        
         .status-inactive {
-            opacity: 0.3;
+            opacity: .35;
         }
-
-        .comment-section {
-            margin-top: 10px;
+        /* Footer */
+        /* Kleines Layout-Polishing */
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
-
-        .comment {
-            margin: 5px 0;
-            padding: 5px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
+        
+        .team-member {
+            margin: 6px 0;
         }
-
+        
+        .hint {
+            color: var(--muted);
+            font-size: 12px;
+        }
+        
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 36px 0 60px;
+            color: #a6b1c2;
+        }
+        
+        footer a {
+            color: #a6b1c2;
+            text-decoration: none;
+        }
+        /* Responsive */
+        
+        @media (max-width: 720px) {
+            table {
+                border-spacing: 8px 10px;
+            }
+            .wrap {
+                padding: 18px 14px 48px;
+            }
+            header {
+                font-size: 24px;
+            }
+        }
     </style>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </head>
-<body>
-    <header>
-        <h1>School-Scrum-Tool</h1>
-    </header>
 
-    
+<body>
+    <header>School-Scrum-Tool</header>
+
+    <div class="wrap">
+
         <div class="section" id="backlog">
             <details open>
-                <summary><label style="font-size: 25;"><b>Backlog-Informationen</b></label></summary>
-            <form id="backlogForm">
-                
-                <br/><br/>
-                <table style="width: 100%;">
-                    <tr>
-                        <td><label for="projectTitle">Projekttitel:</label></td>
-                        <td colspan="3" ><input type="text" id="projectTitle" required style="width: 100%;"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><label for="projectDescription">Projektbeschreibung:</label></td>
-                        <td colspan="3"> <textarea id="projectDescription" placeholder="Projektbeschreibung hier eingeben..." style="width: 100%;"></textarea></td>
-                        <td></td>
-                        <td></td>                    
-                    </tr>
-                    <tr>
-                        <td><label for="startDate">Projektstart:</label><br></td>
-                        <td><input type="date" id="startDate" required></td>
-                        <td><label for="endDate">Projektende:</label></td>
-                        <td><input type="date" id="endDate" required onchange="calculateDaysLeft()"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td colspan="3"><div id="daysLeft"></div></td>
-                        <td></td>
-                        <td></td>
-                    </tr><tr>
-                        <td><label>Teammitglieder:</label></td>
-                        <td colspan="3"><div id="teamMembersContainer">
-                            <div class="team-member">
-                                <input type="text" class="team-member-input" id="team-member-input" placeholder="Mitgliedsname">
-                            </div>
-                        </div></td>
-                        <td></td>
-                        <td></td>
-                    </tr><tr>
-                        <td></td>
-                        <td colspan="3"><button type="button" class="button" onclick="addTeamMember()">Teammitglied hinzufügen</button></td>
-                        <td></td>
-                        <td></td>
-                    </tr><tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr><tr>
-                        <td><label>TODO's:</label></td>
-                        <td colspan="3"><ul id="todoList" class="todo-list"></ul></td>
-                        <td></td>
-                        <td></td>
-                    </tr><tr>
-                        <td></td>
-                        <td colspan="3"><button type="button" class="button" onclick="addTodo()">TODO hinzufügen</button></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <summary><label style="font-size: 20px;"><b>Backlog-Informationen</b></label></summary>
 
-                </table>
-        
+                <form id="backlogForm">
+                    <table>
+                        <tr>
+                            <td><label for="projectTitle">Projekttitel:</label></td>
+                            <td colspan="3"><input type="text" id="projectTitle" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="projectDescription">Projektbeschreibung:</label></td>
+                            <td colspan="3"><textarea id="projectDescription" placeholder="Projektbeschreibung hier eingeben..."></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="startDate">Projektstart:</label></td>
+                            <td><input type="date" id="startDate" required></td>
+                            <td><label for="endDate">Projektende:</label></td>
+                            <td><input type="date" id="endDate" required onchange="calculateDaysLeft()"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="3">
+                                <div id="daysLeft" class="hint"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Teammitglieder:</label></td>
+                            <td colspan="3">
+                                <div id="teamMembersContainer">
+                                    <div class="team-member">
+                                        <input type="text" class="team-member-input" id="team-member-input" placeholder="Mitgliedsname">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="3" class="actions">
+                                <button type="button" class="button outline" onclick="addTeamMember()">Teammitglied hinzufügen</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>TODO's:</label></td>
+                            <td colspan="3">
+                                <ul id="todoList" class="todo-list"></ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="3" class="actions">
+                                <button type="button" class="button outline" onclick="addTodo()">TODO hinzufügen</button>
+                            </td>
+                        </tr>
+                    </table>
 
-                
-            
-                
-
-                
-                
-
-  
-                
-                
-
-     
-                
-                <br><br>
-
-                <button type="button" class="button" onclick="saveProject()">Projekt speichern</button>
-                <button type="button" class="button" onclick="loadProject()">Projekt öffnen</button>
-                <button type="button" class="button" onclick="exportToPDF()">PDF-Report-Export</button>
-                <input type="file" id="fileInput" style="display: none;" accept=".json">
-            </form>
-        </details>
+                    <div class="actions" style="margin-top:6px;">
+                        <button type="button" class="button" onclick="saveProject()">Projekt speichern</button>
+                        <button type="button" class="button" onclick="loadProject()">Projekt öffnen</button>
+                        <button type="button" class="button" onclick="exportToPDF()">PDF-Report-Export</button>
+                        <input type="file" id="fileInput" style="display:none" accept=".json">
+                    </div>
+                </form>
+            </details>
         </div>
-    
 
-    <div class="section" id="sprints">
-        <details open>
-            <summary><label style="font-size: 25;"><b>Sprints</b></label></summary>
-        </details>
-        <div id="sprintContainer"></div>
-        <button class="button" onclick="addSprint()">Sprint hinzufügen</button>
-        
+        <div class="section" id="sprints">
+            <details open>
+                <summary><label style="font-size:20px;"><b>Sprints</b></label></summary>
+            </details>
+
+            <div id="sprintContainer"></div>
+            <div class="actions" style="margin-top:8px;">
+                <button class="button outline" onclick="addSprint()">Sprint hinzufügen</button>
+            </div>
+        </div>
+
+        <footer>
+            <a id="footerLink" href="https://datenflix007.github.io/" target="_blank" rel="noopener">© <span id="year"></span> Felix Staacke</a>
+        </footer>
+
     </div>
-
-    <footer><br>
-        Road to future:<br/>
-        -&nbsp realise an Actualising button<br/>
-        -&nbsp implement an Sprint Master
-        -&nbsp implement a relation between choosen todo and a teammember<br /><br/>
-        This tool is coded by FeSta07<br/>
-        Please report errors, or additional functionalities. <br/><br/>
-
-        
-    </footer>
 
     <script>
         let todos = [];
@@ -221,46 +361,36 @@
         let projectDescription = "";
         const teamMembers = [];
 
-
-
-        // Tage bis zum Projektende berechnen
+        // Tage bis zum Projektende
         function calculateDaysLeft() {
             const endDate = new Date(document.getElementById("endDate").value);
             const today = new Date();
-
             if (isNaN(endDate.getTime())) {
                 document.getElementById("daysLeft").textContent = "Bitte ein gültiges Enddatum auswählen.";
                 return;
             }
-
             const timeDiff = endDate - today;
             const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-            document.getElementById("daysLeft").textContent = daysLeft > 0
-                ? `Noch ${daysLeft} Tag(e) bis zum Projektende.`
-                : daysLeft === 0
-                    ? "Das Projekt endet heute."
-                    : `Das Projekt ist bereits vor ${-daysLeft} Tag(en) beendet.`;
+            document.getElementById("daysLeft").textContent =
+                daysLeft > 0 ? `Noch ${daysLeft} Tag(e) bis zum Projektende.` :
+                daysLeft === 0 ? "Das Projekt endet heute." :
+                `Das Projekt ist bereits vor ${-daysLeft} Tag(en) beendet.`;
         }
 
         // Teammitglied hinzufügen
         function addTeamMember() {
             const container = document.getElementById("teamMembersContainer");
-            
             const div = document.createElement("div");
             div.classList.add("team-member");
             div.innerHTML = '<input type="text" class="team-member-input" placeholder="Mitgliedsname">';
             container.appendChild(div);
             teamMembers[teamMembers.length] = document.getElementById("team-member-input").value;
-            let a = teamMembers[0];
-            console.log(a);
         }
 
-        // TODOs hinzufügen
+        // TODOs
         function addTodo() {
             const title = prompt("Geben Sie den Titel des TODOs ein:");
             const description = prompt("Geben Sie eine Beschreibung des TODOs ein:");
-
             if (title && description) {
                 const todo = {
                     title,
@@ -268,7 +398,6 @@
                     status: 'status-red',
                     comments: []
                 };
-
                 todos.push(todo);
                 updateTodoList();
             }
@@ -281,10 +410,9 @@
                 const li = document.createElement("li");
                 li.classList.add("todo-item");
                 li.innerHTML = `
-                    ${todo.title} - ${todo.description}
-                    <span class="status-circle ${todo.status}"></span>
-                    <button onclick="removeTodo(${index})">Entfernen</button>
-                `;
+          ${todo.title} – ${todo.description}
+          <span class="status-circle ${todo.status}"></span>
+          <button class="button outline" style="margin-left:8px" onclick="removeTodo(${index})">Entfernen</button>`;
                 todoList.appendChild(li);
             });
         }
@@ -294,12 +422,14 @@
             updateTodoList();
         }
 
-        // Sprint hinzufügen
+        // Sprints
         function addSprint() {
             const sprintIndex = sprints.length;
-            const sprint = { description: "", todos: [] };
+            const sprint = {
+                description: "",
+                todos: []
+            };
             sprints.push(sprint);
-
             renderSprints();
         }
 
@@ -307,9 +437,9 @@
             const dropdown = document.getElementById(`todoDropdown-${sprintIndex}`);
             const selectedTodoTitle = dropdown.value;
             const todo = todos.find(t => t.title === selectedTodoTitle);
-
             if (todo) {
-                sprints[sprintIndex].todos.push({ ...todo });
+                sprints[sprintIndex].todos.push({...todo
+                });
                 renderSprints();
             }
         }
@@ -317,216 +447,135 @@
         function renderSprints() {
             const sprintContainer = document.getElementById("sprintContainer");
             sprintContainer.innerHTML = '';
-
             sprints.forEach((sprint, sprintIndex) => {
-                const sprintDiv = document.createElement("div");
-                sprintDiv.classList.add("sprint");
-                sprintDiv.innerHTML = `
-                    <label style="font-size: 15;"><b>Sprint ${sprintIndex + 1}</b></label><br/>
-                    <textarea style="width: 100%;" id="sprintDescription-${sprintIndex}" placeholder="Sprintbeschreibung" onchange="saveSprintDescription(${sprintIndex})">${sprint.description}</textarea>
-                    <select id="todoDropdown-${sprintIndex}">
-                        ${todos
-                            .filter(todo => !sprint.todos.some(st => st.title === todo.title)) // Nur TODOs anzeigen, die nicht schon im Sprint sind
-                            .map(todo => `<option value="${todo.title}">${todo.title}</option>`)
-                            .join('')}
-                    </select>
-                    <button onclick="addTodoToSprint(${sprintIndex})">Hinzufügen</button>
-                    <ul id="sprintTodos-${sprintIndex}" class="todo-list">
-                        ${sprint.todos.map(todo => {
-                            const mainTodo = todos.find(t => t.title === todo.title); // Referenz aus dem Haupt-TODO-Array
-                            const todoIndex = todos.indexOf(mainTodo);
-
-                            return `
-                                <li>
-                                    <span class="status-circle ${mainTodo.status}"></span> 
-                                    ${mainTodo.title} - ${mainTodo.description}
-                                    <div class="comment-section">
-                                        <label><b>Bisherige Kommentare:</b></label>
-                                        <ul>
-                                            ${mainTodo.comments.map(comment => `<li class="comment">${comment}</li>`).join('')}
-                                        </ul>
-                                        <textarea placeholder="Neuen Kommentar hinzufügen" id="comment-${sprintIndex}-${todoIndex}"></textarea>
-                                        <select id="status-${sprintIndex}-${todoIndex}">
-                                            <option value="status-red" ${mainTodo.status === "status-red" ? "selected" : ""}>Unerledigt</option>
-                                            <option value="status-yellow" ${mainTodo.status === "status-yellow" ? "selected" : ""}>In Bearbeitung</option>
-                                            <option value="status-green" ${mainTodo.status === "status-green" ? "selected" : ""}>Erledigt</option>
-                                        </select>
-                                        <button type="button" onclick="saveSprintTodo(${sprintIndex}, ${todoIndex})">Speichern</button>
-                                    </div>
-                                </li>`;
-                        }).join('')}
+                        const sprintDiv = document.createElement("div");
+                        sprintDiv.classList.add("sprint");
+                        sprintDiv.innerHTML = `
+          <label style="font-size: 15px;"><b>Sprint ${sprintIndex + 1}</b></label><br/>
+          <textarea id="sprintDescription-${sprintIndex}" placeholder="Sprintbeschreibung" onchange="saveSprintDescription(${sprintIndex})">${sprint.description}</textarea>
+          <div class="actions" style="margin:8px 0;">
+            <select id="todoDropdown-${sprintIndex}">
+              ${todos.filter(todo => !sprint.todos.some(st => st.title === todo.title))
+                     .map(todo => `<option value="${todo.title}">${todo.title}</option>`).join('')}
+            </select>
+            <button class="button outline" onclick="addTodoToSprint(${sprintIndex})">Hinzufügen</button>
+          </div>
+          <ul id="sprintTodos-${sprintIndex}" class="todo-list">
+            ${sprint.todos.map(todo => {
+              const mainTodo = todos.find(t => t.title === todo.title);
+              const todoIndex = todos.indexOf(mainTodo);
+              return `
+                <li class="todo-item">
+                  <span class="status-circle ${mainTodo.status}"></span>
+                  ${mainTodo.title} – ${mainTodo.description}
+                  <div class="comment-section">
+                    <label><b>Bisherige Kommentare:</b></label>
+                    <ul class="todo-list">
+                      ${mainTodo.comments.map(comment => `<li class="comment">${comment}</li>`).join('')}
                     </ul>
-                `;
-                sprintContainer.appendChild(sprintDiv);
-            });
-        }
+                    <textarea placeholder="Neuen Kommentar hinzufügen" id="comment-${sprintIndex}-${todoIndex}"></textarea>
+                    <div class="actions" style="margin-top:6px;">
+                      <select id="status-${sprintIndex}-${todoIndex}">
+                        <option value="status-red" ${mainTodo.status === "status-red" ? "selected" : ""}>Unerledigt</option>
+                        <option value="status-yellow" ${mainTodo.status === "status-yellow" ? "selected" : ""}>In Bearbeitung</option>
+                        <option value="status-green" ${mainTodo.status === "status-green" ? "selected" : ""}>Erledigt</option>
+                      </select>
+                      <button class="button" type="button" onclick="saveSprintTodo(${sprintIndex}, ${todoIndex})">Speichern</button>
+                    </div>
+                  </div>
+                </li>`;
+            }).join('')}
+          </ul>`;
+        sprintContainer.appendChild(sprintDiv);
+      });
+    }
 
+    function saveSprintTodo(sprintIndex, todoIndex) {
+      const commentInput = document.getElementById(`comment-${sprintIndex}-${todoIndex}`);
+      const statusSelect = document.getElementById(`status-${sprintIndex}-${todoIndex}`);
+      const newComment = commentInput.value.trim();
+      const newStatus = statusSelect.value;
+      if (todoIndex < 0 || todoIndex >= todos.length) return;
+      if (newComment) { todos[todoIndex].comments.push(newComment); }
+      todos[todoIndex].status = newStatus;
+      commentInput.value = "";
+      updateTodoList();
+      renderSprints();
+    }
+    function saveSprintDescription(index) {
+      const textarea = document.getElementById(`sprintDescription-${index}`);
+      sprints[index].description = textarea.value;
+    }
 
-        function saveSprintTodo(sprintIndex, todoIndex) {
-            const commentInput = document.getElementById(`comment-${sprintIndex}-${todoIndex}`);
-            const statusSelect = document.getElementById(`status-${sprintIndex}-${todoIndex}`);
-            const newComment = commentInput.value.trim();
-            const newStatus = statusSelect.value;
+    // Projekt speichern / laden
+    function saveProject() {
+      try {
+        const projectTitle = document.getElementById("projectTitle").value.trim();
+        const projectDescription = document.getElementById("projectDescription").value.trim();
+        const startDate = document.getElementById("startDate").value;
+        const endDate = document.getElementById("endDate").value;
+        const teamMembers = Array.from(document.querySelectorAll(".team-member-input"))
+          .map(input => input.value.trim()).filter(Boolean);
+        if (!projectTitle){ alert("Bitte einen Projekttitel angeben."); return; }
+        if (!startDate || !endDate){ alert("Bitte Start- und Enddatum angeben."); return; }
+        if (new Date(startDate) > new Date(endDate)){ alert("Das Startdatum darf nicht nach dem Enddatum liegen."); return; }
+        const project = { title:projectTitle, description:projectDescription, startDate, endDate, teamMembers, todos, sprints };
+        const jsonContent = JSON.stringify(project, null, 2);
+        const date = new Date();
+        const filename = `${projectTitle.replace(/\s+/g,'_')}_${date.getFullYear()}${(date.getMonth()+1+'').padStart(2,'0')}${(date.getDate()+'').padStart(2,'0')}_${(date.getHours()+'').padStart(2,'0')}${(date.getMinutes()+'').padStart(2,'0')}.json`;
+        const blob = new Blob([jsonContent], { type:"application/json" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        link.click();
+        alert("Das Projekt wurde erfolgreich gespeichert!");
+      } catch (error) {
+        console.error("Fehler beim Speichern des Projekts:", error);
+        alert("Es ist ein Fehler beim Speichern des Projekts aufgetreten. Bitte versuchen Sie es erneut.");
+      }
+    }
 
-            if (todoIndex < 0 || todoIndex >= todos.length) {
-                console.error("Ungültiger TODO-Index.");
-                return;
-            }
+    function loadProject() {
+      const input = document.getElementById("fileInput");
+      input.click();
+      input.onchange = (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (e) => { loadProjectData(JSON.parse(e.target.result)); };
+        reader.readAsText(file);
+      };
+    }
+    function loadProjectData(data) {
+      document.getElementById("projectTitle").value = data.title || '';
+      document.getElementById("projectDescription").value = data.description || '';
+      document.getElementById("startDate").value = data.startDate || '';
+      document.getElementById("endDate").value = data.endDate || '';
+      const teamContainer = document.getElementById("teamMembersContainer");
+      teamContainer.innerHTML = '';
+      (data.teamMembers || []).forEach(member => {
+        const div = document.createElement("div");
+        div.classList.add("team-member");
+        div.innerHTML = `<input type="text" class="team-member-input" value="${member}">`;
+        teamContainer.appendChild(div);
+      });
+      todos = data.todos || []; updateTodoList();
+      sprints = data.sprints || []; renderSprints();
+    }
 
-            // Kommentar nur hinzufügen, wenn es nicht leer ist
-            if (newComment) {
-                todos[todoIndex].comments.push(newComment);
-            }
-            todos[todoIndex].status = newStatus;
-
-            // Reset des Kommentar-Textfeldes
-            commentInput.value = "";
-
-            // Sprints und Backlog synchronisieren
-            updateTodoList();
-            renderSprints();
-        }
-
-
-
-        function updateTODO(todoIndex, newStatus, newComment) {
-            if (todoIndex < 0 || todoIndex >= todos.length) {
-                console.error("Ungültiger TODO-Index.");
-                return;
-            }
-
-            // Status und Kommentar im Haupt-TODO aktualisieren
-            todos[todoIndex].status = newStatus;
-            if (newComment) {
-                todos[todoIndex].comments.push(newComment);
-            }
-
-            // Backlog-TODO-Liste aktualisieren
-            updateTodoList();
-
-            // Sprints neu rendern (alle TODOs basieren auf dem Haupt-TODO-Array)
-            renderSprints();
-        }
-
-
-
-        function saveSprintDescription(index) {
-            const textarea = document.getElementById(`sprintDescription-${index}`);
-            sprints[index].description = textarea.value;
-        }
-
-        function saveProject() {
-            try {
-                // Daten aus den Eingabefeldern holen
-                const projectTitle = document.getElementById("projectTitle").value.trim();
-                const projectDescription = document.getElementById("projectDescription").value.trim();
-                const startDate = document.getElementById("startDate").value;
-                const endDate = document.getElementById("endDate").value;
-                const teamMembers = Array.from(document.querySelectorAll(".team-member-input"))
-                    .map(input => input.value.trim())
-                    .filter(name => name); // Leere Namen entfernen
-
-                // Titel und Daten validieren
-                if (!projectTitle) {
-                    alert("Bitte einen Projekttitel angeben.");
-                    return;
-                }
-
-                if (!startDate || !endDate) {
-                    alert("Bitte Start- und Enddatum angeben.");
-                    return;
-                }
-
-                if (new Date(startDate) > new Date(endDate)) {
-                    alert("Das Startdatum darf nicht nach dem Enddatum liegen.");
-                    return;
-                }
-
-                // Projektstruktur erstellen
-                const project = {
-                    title: projectTitle,
-                    description: projectDescription,
-                    startDate,
-                    endDate,
-                    teamMembers,
-                    todos,
-                    sprints
-                };
-
-                // JSON-Format erstellen
-                const jsonContent = JSON.stringify(project, null, 2);
-
-                // Dateiname generieren
-                const date = new Date();
-                const filename = `${projectTitle.replace(/\s+/g, '_')}_${date.getFullYear()}${(date.getMonth() + 1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}_${date.getHours().toString().padStart(2, '0')}${date.getMinutes().toString().padStart(2, '0')}.json`;
-
-                // JSON-Datei speichern
-                const blob = new Blob([jsonContent], { type: "application/json" });
-                const link = document.createElement("a");
-                link.href = URL.createObjectURL(blob);
-                link.download = filename;
-                link.click();
-
-                alert("Das Projekt wurde erfolgreich gespeichert!");
-            } catch (error) {
-                console.error("Fehler beim Speichern des Projekts:", error);
-                alert("Es ist ein Fehler beim Speichern des Projekts aufgetreten. Bitte versuchen Sie es erneut.");
-            }
-        }
-
-
-        // Projekt öffnen
-        function loadProject() {
-            const input = document.getElementById("fileInput");
-            input.click();
-
-            input.onchange = (event) => {
-                const file = event.target.files[0];
-                if (!file) return;
-
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const content = JSON.parse(e.target.result);
-                    loadProjectData(content);
-                };
-                reader.readAsText(file);
-            };
-        }
-
-        function loadProjectData(data) {
-            document.getElementById("projectTitle").value = data.title || '';
-            document.getElementById("projectDescription").value = data.description || '';
-            document.getElementById("startDate").value = data.startDate || '';
-            document.getElementById("endDate").value = data.endDate || '';
-
-            const teamContainer = document.getElementById("teamMembersContainer");
-            teamContainer.innerHTML = '';
-            (data.teamMembers || []).forEach(member => {
-                const div = document.createElement("div");
-                div.classList.add("team-member");
-                div.innerHTML = `<input type="text" class="team-member-input" value="${member}">`;
-                teamContainer.appendChild(div);
-            });
-
-            todos = data.todos || [];
-            updateTodoList();
-
-            sprints = data.sprints || [];
-            renderSprints();
-        }
-
-        // PDF-Report exportieren
-        function exportToPDF() {
-            const element = document.body;
-            const options = {
-                margin: 1,
-                filename: 'Projekt-Report.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
-            };
-            html2pdf().from(element).set(options).save();
-        }
+    // PDF-Export
+    function exportToPDF() {
+      const element = document.body;
+      const options = {
+        margin: 1,
+        filename: 'Projekt-Report.pdf',
+        image: { type:'jpeg', quality:0.98 },
+        html2canvas: { scale:2 },
+        jsPDF: { unit:'cm', format:'a4', orientation:'portrait' }
+      };
+      html2pdf().from(element).set(options).save();
+    }
     </script>
 </body>
+
 </html>
