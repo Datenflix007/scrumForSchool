@@ -1,0 +1,416 @@
+{
+    "title":  "Schuelerprojekt Latein Vokabeltrainer (CLI)",
+    "description":  "Fiktiver Scrum4School Verlauf fuer ein einfaches Python CLI Projekt mit nachvollziehbaren Code-Versionen und Dokumentation.",
+    "startDate":  "2026-01-12",
+    "endDate":  "2026-02-13",
+    "teamMembers":  [
+                        "Lea",
+                        "Mika",
+                        "Samir"
+                    ],
+    "todos":  [
+                  {
+                      "title":  "CLI Grundgeruest erstellen",
+                      "description":  "Erste lauffaehige Python Datei mit zufaelligen Fragen.",
+                      "status":  "status-green",
+                      "assignee":  "Lea",
+                      "comments":  [
+                                       {
+                                           "text":  "v1 laeuft lokal",
+                                           "by":  "Lea",
+                                           "time":  "2026-01-12T10:10:00.000Z"
+                                       }
+                                   ]
+                  },
+                  {
+                      "title":  "Vokabeln in JSON auslagern",
+                      "description":  "Liste nicht mehr hart codieren, sondern als Datei speichern.",
+                      "status":  "status-green",
+                      "assignee":  "Mika",
+                      "comments":  [
+                                       {
+                                           "text":  "JSON Struktur steht",
+                                           "by":  "Mika",
+                                           "time":  "2026-01-19T10:15:00.000Z"
+                                       }
+                                   ]
+                  },
+                  {
+                      "title":  "README schreiben",
+                      "description":  "Kurze Anleitung zu Voraussetzungen, Installation und Nutzung.",
+                      "status":  "status-green",
+                      "assignee":  "Samir",
+                      "comments":  [
+                                       {
+                                           "text":  "README ist absichtlich einfach gehalten",
+                                           "by":  "Samir",
+                                           "time":  "2026-01-19T10:18:00.000Z"
+                                       }
+                                   ]
+                  },
+                  {
+                      "title":  "Argumente --anzahl und --datei einbauen",
+                      "description":  "Konfiguration ueber CLI Parameter statt fester Werte.",
+                      "status":  "status-green",
+                      "assignee":  "Lea",
+                      "comments":  [
+                                       {
+                                           "text":  "v3 mit argparse umgesetzt",
+                                           "by":  "Lea",
+                                           "time":  "2026-01-26T10:21:00.000Z"
+                                       }
+                                   ]
+                  },
+                  {
+                      "title":  "Falsche Antworten wiederholen",
+                      "description":  "Optional zweite Runde nur mit falsch beantworteten Vokabeln.",
+                      "status":  "status-yellow",
+                      "assignee":  "Mika",
+                      "comments":  [
+                                       {
+                                           "text":  "Grundlogik in v4 vorhanden, Feinschliff offen",
+                                           "by":  "Mika",
+                                           "time":  "2026-02-02T10:28:00.000Z"
+                                       }
+                                   ]
+                  }
+              ],
+    "sprints":  [
+                    {
+                        "date":  "2026-01-12",
+                        "goals":  [
+                                      {
+                                          "text":  "Projektidee und Minimalziel festlegen",
+                                          "done":  true,
+                                          "carry":  false
+                                      },
+                                      {
+                                          "text":  "Erste CLI Version starten koennen",
+                                          "done":  true,
+                                          "carry":  false
+                                      }
+                                  ],
+                        "todos":  [
+                                      {
+                                          "title":  "CLI Grundgeruest erstellen",
+                                          "addedBy":  "Lea"
+                                      }
+                                  ],
+                        "notes":  [
+                                      {
+                                          "time":  "2026-01-12T10:16:00.000Z",
+                                          "text":  "Team will bewusst klein starten.",
+                                          "by":  "Samir"
+                                      }
+                                  ],
+                        "participants":  [
+                                             {
+                                                 "name":  "Lea",
+                                                 "present":  true,
+                                                 "role":  "coding"
+                                             },
+                                             {
+                                                 "name":  "Mika",
+                                                 "present":  true,
+                                                 "role":  "coding"
+                                             },
+                                             {
+                                                 "name":  "Samir",
+                                                 "present":  true,
+                                                 "role":  "doku"
+                                             }
+                                         ]
+                    },
+                    {
+                        "date":  "2026-01-19",
+                        "goals":  [
+                                      {
+                                          "text":  "Vokabelliste in JSON verschieben",
+                                          "done":  true,
+                                          "carry":  false
+                                      },
+                                      {
+                                          "text":  "README fuer Mitschueler erstellen",
+                                          "done":  true,
+                                          "carry":  false
+                                      }
+                                  ],
+                        "todos":  [
+                                      {
+                                          "title":  "Vokabeln in JSON auslagern",
+                                          "addedBy":  "Mika"
+                                      },
+                                      {
+                                          "title":  "README schreiben",
+                                          "addedBy":  "Samir"
+                                      }
+                                  ],
+                        "notes":  [
+                                      {
+                                          "time":  "2026-01-19T10:22:00.000Z",
+                                          "text":  "Dateiformat fuer Vokabeln festgelegt.",
+                                          "by":  "Mika"
+                                      }
+                                  ],
+                        "participants":  [
+                                             {
+                                                 "name":  "Lea",
+                                                 "present":  true,
+                                                 "role":  "coding"
+                                             },
+                                             {
+                                                 "name":  "Mika",
+                                                 "present":  true,
+                                                 "role":  "coding"
+                                             },
+                                             {
+                                                 "name":  "Samir",
+                                                 "present":  true,
+                                                 "role":  "doku"
+                                             }
+                                         ]
+                    },
+                    {
+                        "date":  "2026-01-26",
+                        "goals":  [
+                                      {
+                                          "text":  "CLI Parameter fuer Nutzung im Unterricht",
+                                          "done":  true,
+                                          "carry":  false
+                                      }
+                                  ],
+                        "todos":  [
+                                      {
+                                          "title":  "Argumente --anzahl und --datei einbauen",
+                                          "addedBy":  "Lea"
+                                      }
+                                  ],
+                        "notes":  [
+                                      {
+                                          "time":  "2026-01-26T10:24:00.000Z",
+                                          "text":  "Argparse eingebaut, Bedienung klarer.",
+                                          "by":  "Lea"
+                                      }
+                                  ],
+                        "participants":  [
+                                             {
+                                                 "name":  "Lea",
+                                                 "present":  true,
+                                                 "role":  "coding"
+                                             },
+                                             {
+                                                 "name":  "Mika",
+                                                 "present":  true,
+                                                 "role":  "coding"
+                                             },
+                                             {
+                                                 "name":  "Samir",
+                                                 "present":  true,
+                                                 "role":  "doku"
+                                             }
+                                         ]
+                    },
+                    {
+                        "date":  "2026-02-02",
+                        "goals":  [
+                                      {
+                                          "text":  "Fehler erneut abfragen (optional)",
+                                          "done":  false,
+                                          "carry":  true
+                                      },
+                                      {
+                                          "text":  "README fuer Abgabe aktualisieren",
+                                          "done":  true,
+                                          "carry":  false
+                                      }
+                                  ],
+                        "todos":  [
+                                      {
+                                          "title":  "Falsche Antworten wiederholen",
+                                          "addedBy":  "Mika"
+                                      },
+                                      {
+                                          "title":  "README schreiben",
+                                          "addedBy":  "Samir"
+                                      }
+                                  ],
+                        "notes":  [
+                                      {
+                                          "time":  "2026-02-02T10:31:00.000Z",
+                                          "text":  "Wiederholungsrunde funktioniert, aber noch einfach umgesetzt.",
+                                          "by":  "Mika"
+                                      }
+                                  ],
+                        "participants":  [
+                                             {
+                                                 "name":  "Lea",
+                                                 "present":  true,
+                                                 "role":  "coding"
+                                             },
+                                             {
+                                                 "name":  "Mika",
+                                                 "present":  true,
+                                                 "role":  "coding"
+                                             },
+                                             {
+                                                 "name":  "Samir",
+                                                 "present":  true,
+                                                 "role":  "doku"
+                                             }
+                                         ]
+                    }
+                ],
+    "logbook":  [
+                    {
+                        "time":  "2026-01-12T10:05:00.000Z",
+                        "type":  "Projektstart",
+                        "info":  "Thema: Latein Vokabeltrainer als CLI"
+                    },
+                    {
+                        "time":  "2026-01-12T10:15:00.000Z",
+                        "type":  "Code-Stand gespeichert",
+                        "info":  "v1 mit Grundgeruest"
+                    },
+                    {
+                        "time":  "2026-01-19T10:20:00.000Z",
+                        "type":  "Code-Stand gespeichert",
+                        "info":  "v2 mit JSON-Datei und README"
+                    },
+                    {
+                        "time":  "2026-01-26T10:25:00.000Z",
+                        "type":  "Code-Stand gespeichert",
+                        "info":  "v3 mit CLI Parametern"
+                    },
+                    {
+                        "time":  "2026-02-02T10:30:00.000Z",
+                        "type":  "Code-Stand gespeichert",
+                        "info":  "v4 mit Wiederholungsmodus"
+                    }
+                ],
+    "sourceSnapshots":  [
+                            {
+                                "id":  "v1",
+                                "time":  "2026-01-12T10:15:00.000Z",
+                                "workspaceName":  "vokabeltrainer-cli",
+                                "fileCount":  2,
+                                "totalBytes":  919,
+                                "files":  [
+                                              {
+                                                  "path":  "vokabeltest.py",
+                                                  "size":  586,
+                                                  "lastModified":  1768212900000,
+                                                  "content":  "import random\n\nVOCAB = [\n    (\"amicus\", \"freund\"),\n    (\"puella\", \"maedchen\"),\n    (\"puer\", \"junge\"),\n    (\"domus\", \"haus\"),\n    (\"aqua\", \"wasser\")\n]\n\n\ndef main():\n    print(\"Latein Vokabeltest v1\")\n    fragen = min(5, len(VOCAB))\n    score = 0\n\n    for latein, deutsch in random.sample(VOCAB, fragen):\n        antwort = input(f\"{latein} = \").strip().lower()\n        if antwort == deutsch:\n            print(\"richtig\")\n            score += 1\n        else:\n            print(f\"falsch, loesung: {deutsch}\")\n\n    print(f\"Ergebnis: {score}/{fragen}\")\n\n\nif __name__ == \"__main__\":\n    main()",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              },
+                                              {
+                                                  "path":  "README.md",
+                                                  "size":  333,
+                                                  "lastModified":  1768212900000,
+                                                  "content":  "# Vokabeltrainer CLI (v1)\n\n## Voraussetzungen\n- Python 3.10 oder neuer\n\n## Installation\n- Keine externe Bibliothek notwendig.\n- Projektordner oeffnen.\n\n## Benutzung\n- Start: `python vokabeltest.py`\n- Eingabe: deutsche Uebersetzung in Kleinbuchstaben\n\n## Hinweis\n- Diese Version nutzt eine fest eingebaute Vokabelliste im Python-Code.",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              }
+                                          ]
+                            },
+                            {
+                                "id":  "v2",
+                                "time":  "2026-01-19T10:20:00.000Z",
+                                "workspaceName":  "vokabeltrainer-cli",
+                                "fileCount":  3,
+                                "totalBytes":  1626,
+                                "files":  [
+                                              {
+                                                  "path":  "vokabeltest.py",
+                                                  "size":  751,
+                                                  "lastModified":  1768818000000,
+                                                  "content":  "import json\nimport random\n\n\ndef load_vocab(path=\"latein_vokabeln.json\"):\n    with open(path, \"r\", encoding=\"utf-8\") as f:\n        data = json.load(f)\n    return data[\"vokabeln\"]\n\n\ndef main():\n    vocab = load_vocab()\n    fragen = min(8, len(vocab))\n    score = 0\n\n    print(\"Latein Vokabeltest v2\")\n    for eintrag in random.sample(vocab, fragen):\n        latein = eintrag[\"latein\"]\n        loesungen = [w.lower() for w in eintrag[\"deutsch\"]]\n        antwort = input(f\"{latein} = \").strip().lower()\n\n        if antwort in loesungen:\n            print(\"richtig\")\n            score += 1\n        else:\n            print(f\"falsch, loesung: {\u0027, \u0027.join(eintrag[\u0027deutsch\u0027])}\")\n\n    print(f\"Ergebnis: {score}/{fragen}\")\n\n\nif __name__ == \"__main__\":\n    main()",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              },
+                                              {
+                                                  "path":  "latein_vokabeln.json",
+                                                  "size":  464,
+                                                  "lastModified":  1768818000000,
+                                                  "content":  "{\n  \"sprache\": \"latein-deutsch\",\n  \"vokabeln\": [\n    { \"latein\": \"amicus\", \"deutsch\": [\"freund\"] },\n    { \"latein\": \"puella\", \"deutsch\": [\"maedchen\"] },\n    { \"latein\": \"puer\", \"deutsch\": [\"junge\"] },\n    { \"latein\": \"domus\", \"deutsch\": [\"haus\"] },\n    { \"latein\": \"aqua\", \"deutsch\": [\"wasser\"] },\n    { \"latein\": \"terra\", \"deutsch\": [\"erde\", \"land\"] },\n    { \"latein\": \"scribere\", \"deutsch\": [\"schreiben\"] },\n    { \"latein\": \"legere\", \"deutsch\": [\"lesen\"] }\n  ]\n}",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              },
+                                              {
+                                                  "path":  "README.md",
+                                                  "size":  411,
+                                                  "lastModified":  1768818000000,
+                                                  "content":  "# Vokabeltrainer CLI (v2)\n\n## Voraussetzungen\n- Python 3.10 oder neuer\n\n## Installation\n1. Projektordner herunterladen oder klonen.\n2. Sicherstellen, dass `vokabeltest.py` und `latein_vokabeln.json` im gleichen Ordner liegen.\n\n## Benutzung\n- Start: `python vokabeltest.py`\n- Das Programm liest Vokabeln aus `latein_vokabeln.json`.\n\n## Datenformat\n- Pro Eintrag werden `latein` und eine Liste `deutsch` erwartet.",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              }
+                                          ]
+                            },
+                            {
+                                "id":  "v3",
+                                "time":  "2026-01-26T10:25:00.000Z",
+                                "workspaceName":  "vokabeltrainer-cli",
+                                "fileCount":  3,
+                                "totalBytes":  2783,
+                                "files":  [
+                                              {
+                                                  "path":  "vokabeltest.py",
+                                                  "size":  1284,
+                                                  "lastModified":  1769423100000,
+                                                  "content":  "import argparse\nimport json\nimport random\nimport re\n\n\ndef normalize(text):\n    text = text.lower().strip()\n    text = re.sub(r\"[^a-z0-9 ]+\", \"\", text)\n    return re.sub(r\"\\s+\", \" \", text)\n\n\ndef load_vocab(path):\n    with open(path, \"r\", encoding=\"utf-8\") as f:\n        data = json.load(f)\n    return data.get(\"vokabeln\", [])\n\n\ndef run_test(vocab, anzahl):\n    anzahl = min(anzahl, len(vocab))\n    score = 0\n\n    for i, eintrag in enumerate(random.sample(vocab, anzahl), start=1):\n        latein = eintrag[\"latein\"]\n        loesungen = {normalize(w) for w in eintrag[\"deutsch\"]}\n        antwort = normalize(input(f\"{i}. {latein} = \"))\n        if antwort in loesungen:\n            print(\"richtig\")\n            score += 1\n        else:\n            print(f\"falsch, loesung: {\u0027, \u0027.join(eintrag[\u0027deutsch\u0027])}\")\n\n    print(f\"Ergebnis: {score}/{anzahl}\")\n\n\ndef main():\n    parser = argparse.ArgumentParser(description=\"Einfacher Latein Vokabeltrainer\")\n    parser.add_argument(\"--datei\", default=\"latein_vokabeln.json\")\n    parser.add_argument(\"--anzahl\", type=int, default=10)\n    args = parser.parse_args()\n\n    vocab = load_vocab(args.datei)\n    if not vocab:\n        print(\"Keine Vokabeln gefunden.\")\n        return\n\n    run_test(vocab, args.anzahl)\n\n\nif __name__ == \"__main__\":\n    main()",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              },
+                                              {
+                                                  "path":  "latein_vokabeln.json",
+                                                  "size":  991,
+                                                  "lastModified":  1769423100000,
+                                                  "content":  "{\n  \"sprache\": \"latein-deutsch\",\n  \"beschreibung\": \"Version fuer den CLI Vokabeltrainer\",\n  \"vokabeln\": [\n    { \"latein\": \"amicus\", \"deutsch\": [\"freund\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"puella\", \"deutsch\": [\"maedchen\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"puer\", \"deutsch\": [\"junge\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"domus\", \"deutsch\": [\"haus\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"aqua\", \"deutsch\": [\"wasser\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"terra\", \"deutsch\": [\"erde\", \"land\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"dies\", \"deutsch\": [\"tag\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"nox\", \"deutsch\": [\"nacht\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"scribere\", \"deutsch\": [\"schreiben\"], \"wortart\": \"verb\" },\n    { \"latein\": \"legere\", \"deutsch\": [\"lesen\"], \"wortart\": \"verb\" },\n    { \"latein\": \"audire\", \"deutsch\": [\"hoeren\"], \"wortart\": \"verb\" },\n    { \"latein\": \"videre\", \"deutsch\": [\"sehen\"], \"wortart\": \"verb\" }\n  ]\n}",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              },
+                                              {
+                                                  "path":  "README.md",
+                                                  "size":  508,
+                                                  "lastModified":  1769423100000,
+                                                  "content":  "# Vokabeltrainer CLI (v3)\n\n## Voraussetzungen\n- Python 3.10 oder neuer\n\n## Installation\n1. Projektordner herunterladen oder klonen.\n2. Keine Pakete mit `pip` notwendig.\n\n## Benutzung\n- Standard: `python vokabeltest.py`\n- Eigene Datei: `python vokabeltest.py --datei latein_vokabeln.json`\n- Anzahl Fragen: `python vokabeltest.py --anzahl 12`\n\n## Zweck im Schulprojekt\n- Diese Version ist absichtlich einfach gehalten.\n- Fokus liegt auf nachvollziehbarem Scrum-Fortschritt, nicht auf perfekter CLI-Architektur.",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              }
+                                          ]
+                            },
+                            {
+                                "id":  "v4",
+                                "time":  "2026-02-02T10:30:00.000Z",
+                                "workspaceName":  "vokabeltrainer-cli",
+                                "fileCount":  3,
+                                "totalBytes":  3753,
+                                "files":  [
+                                              {
+                                                  "path":  "vokabeltest.py",
+                                                  "size":  1718,
+                                                  "lastModified":  1770028200000,
+                                                  "content":  "import argparse\nimport json\nimport random\nimport re\n\n\ndef normalize(text):\n    text = text.lower().strip()\n    text = re.sub(r\"[^a-z0-9 ]+\", \"\", text)\n    return re.sub(r\"\\s+\", \" \", text)\n\n\ndef load_vocab(path):\n    with open(path, \"r\", encoding=\"utf-8\") as f:\n        data = json.load(f)\n    return data.get(\"vokabeln\", [])\n\n\ndef ask_round(items, titel):\n    print(f\"\\n{titel}\")\n    score = 0\n    wrong = []\n\n    for i, eintrag in enumerate(items, start=1):\n        latein = eintrag[\"latein\"]\n        loesungen = {normalize(w) for w in eintrag[\"deutsch\"]}\n        antwort = normalize(input(f\"{i}. {latein} = \"))\n        if antwort in loesungen:\n            print(\"richtig\")\n            score += 1\n        else:\n            print(f\"falsch, loesung: {\u0027, \u0027.join(eintrag[\u0027deutsch\u0027])}\")\n            wrong.append(eintrag)\n\n    return score, wrong\n\n\ndef main():\n    parser = argparse.ArgumentParser(description=\"Einfacher Latein Vokabeltrainer\")\n    parser.add_argument(\"--datei\", default=\"latein_vokabeln.json\")\n    parser.add_argument(\"--anzahl\", type=int, default=10)\n    parser.add_argument(\"--wiederholen\", action=\"store_true\", help=\"Falsche Antworten einmal wiederholen\")\n    args = parser.parse_args()\n\n    vocab = load_vocab(args.datei)\n    if not vocab:\n        print(\"Keine Vokabeln gefunden.\")\n        return\n\n    auswahl = random.sample(vocab, min(args.anzahl, len(vocab)))\n    score, wrong = ask_round(auswahl, \"Runde 1\")\n\n    if args.wiederholen and wrong:\n        extra_score, wrong2 = ask_round(wrong, \"Runde 2 (nur falsche)\")\n        score += extra_score\n        wrong = wrong2\n\n    print(f\"\\nGesamtergebnis: {score} richtig\")\n    print(f\"Offen falsch: {len(wrong)}\")\n\n\nif __name__ == \"__main__\":\n    main()",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              },
+                                              {
+                                                  "path":  "latein_vokabeln.json",
+                                                  "size":  1303,
+                                                  "lastModified":  1770028200000,
+                                                  "content":  "{\n  \"sprache\": \"latein-deutsch\",\n  \"beschreibung\": \"Erweiterte Uebungsliste fuer den CLI Vokabeltrainer\",\n  \"vokabeln\": [\n    { \"latein\": \"amicus\", \"deutsch\": [\"freund\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"puella\", \"deutsch\": [\"maedchen\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"puer\", \"deutsch\": [\"junge\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"domus\", \"deutsch\": [\"haus\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"aqua\", \"deutsch\": [\"wasser\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"terra\", \"deutsch\": [\"erde\", \"land\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"dies\", \"deutsch\": [\"tag\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"nox\", \"deutsch\": [\"nacht\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"magister\", \"deutsch\": [\"lehrer\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"discipulus\", \"deutsch\": [\"schueler\"], \"wortart\": \"substantiv\" },\n    { \"latein\": \"scribere\", \"deutsch\": [\"schreiben\"], \"wortart\": \"verb\" },\n    { \"latein\": \"legere\", \"deutsch\": [\"lesen\"], \"wortart\": \"verb\" },\n    { \"latein\": \"audire\", \"deutsch\": [\"hoeren\"], \"wortart\": \"verb\" },\n    { \"latein\": \"videre\", \"deutsch\": [\"sehen\"], \"wortart\": \"verb\" },\n    { \"latein\": \"venire\", \"deutsch\": [\"kommen\"], \"wortart\": \"verb\" },\n    { \"latein\": \"ire\", \"deutsch\": [\"gehen\"], \"wortart\": \"verb\" }\n  ]\n}",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              },
+                                              {
+                                                  "path":  "README.md",
+                                                  "size":  732,
+                                                  "lastModified":  1770028200000,
+                                                  "content":  "# Vokabeltrainer CLI (v4)\n\n## Voraussetzungen\n- Python 3.10 oder neuer\n\n## Installation\n1. Projektordner herunterladen oder klonen.\n2. Keine Abhaengigkeiten installieren.\n3. Sicherstellen, dass `vokabeltest.py` und `latein_vokabeln.json` im gleichen Ordner sind.\n\n## Benutzung\n- Standardstart: `python vokabeltest.py`\n- Fragenzahl: `python vokabeltest.py --anzahl 12`\n- Andere JSON-Datei: `python vokabeltest.py --datei latein_vokabeln.json`\n- Falsche Antworten wiederholen: `python vokabeltest.py --wiederholen`\n\n## Hinweise\n- Das Programm ist absichtlich klein gehalten.\n- Ziel im Schuelerprojekt: Scrum-Fortschritt und Versionierung nachvollziehbar dokumentieren.\n- Die Datei `latein_vokabeln.json` kann manuell erweitert werden.",
+                                                  "omitted":  false,
+                                                  "reason":  ""
+                                              }
+                                          ]
+                            }
+                        ]
+}
