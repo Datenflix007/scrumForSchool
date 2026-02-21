@@ -6,7 +6,7 @@ an webside tool coded by myself
 [Schüler-Anwendung](https://datenflix007.github.io/src/modules/scrum4school/index.html)
 [Lehrer-Anwendung](https://datenflix007.github.io/src/modules/scrum4school/teacher.html)
 ## Quickstart
-1.  Download to file.\n
+1.  Downloaden Sie, je nach Bedarf die [Schülerwebseite](https://github.com/Datenflix007/scrumForSchool/raw/main/Scrum4School_students.html). 
 2.  Open the file in your webbrowser.
 
 ## Benutzung - Schüleranwendung
@@ -17,5 +17,6 @@ an webside tool coded by myself
 <img width="1685" height="623" alt="image" src="https://github.com/user-attachments/assets/7a682107-7dd7-4ee9-a559-eea0ed12469e" />
 
 ## Benutzung - Lehreranwendung
-<img width="1670" height="1246" alt="Screenshot 2026-02-21 220402" src="https://github.com/user-attachments/assets/60f49b4b-91fb-4005-a866-3645affd1481" />
 <img width="1661" height="1303" alt="Screenshot 2026-02-21 220324" src="https://github.com/user-attachments/assets/22370732-74fd-40fa-afd3-4c6b24cfeb8b" />
+<img width="1670" height="1246" alt="Screenshot 2026-02-21 220402" src="https://github.com/user-attachments/assets/60f49b4b-91fb-4005-a866-3645affd1481" />
+
