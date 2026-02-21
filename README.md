@@ -3,6 +3,8 @@ an webside tool coded by myself
 
 
 # How to use
+[Schüler-Anwendung](https://datenflix007.github.io/src/modules/scrum4school/index.html)
+[Lehrer-Anwendung](https://datenflix007.github.io/src/modules/scrum4school/teacher.html)
 ## Quickstart
 1.  Download to file.\n
 2.  Open the file in your webbrowser.
