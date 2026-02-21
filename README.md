@@ -2,12 +2,14 @@
 an webside tool coded by myself 
 
 
-# How to use
-[Schüler-Anwendung](https://datenflix007.github.io/src/modules/scrum4school/index.html)
+# Benutzung
+Online nutzen: [Schüler-Anwendung](https://datenflix007.github.io/src/modules/scrum4school/index.html)
 [Lehrer-Anwendung](https://datenflix007.github.io/src/modules/scrum4school/teacher.html)
+
+
 ## Quickstart
-1.  Downloaden Sie, je nach Bedarf die [Schülerwebseite](https://github.com/Datenflix007/scrumForSchool/raw/main/Scrum4School_students.html). 
-2.  Open the file in your webbrowser.
+1.  Downloaden Sie die [Schülerwebseite](https://github.com/Datenflix007/scrumForSchool/raw/main/Scrum4School_students.html) und als Lehrkraft die [Lehrerwebseite](https://github.com/Datenflix007/scrumForSchool/blob/main/teacher.html). 
+2.  Öffnen Sie die Datei im Webbrowser durch Doppelklick auf die Datei.
 
 ## Benutzung - Schüleranwendung
 <img width="1680" height="1279" alt="Screenshot 2026-02-21 211334" src="https://github.com/user-attachments/assets/9fcc12a8-b91b-40a0-9b96-63e91254689f" />
